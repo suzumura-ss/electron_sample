@@ -1,4 +1,4 @@
-remote = require('remote');
+const remote = require('electron').remote;
 curwin = remote.getCurrentWindow();
 
 var is_show_devtool = false;
@@ -11,4 +11,3 @@ function toggle_devtool() {
 		curwin.closeDevTools();
 	}
 }
-

@@ -1,10 +1,6 @@
-remote = require('remote');
-curwin = remote.getCurrentWindow();
-dialog = remote.require('dialog');
+const {dialog} = require('electron').remote;
 
 function show_dialog() {
-
-	/* dialog.showMessageBox()に引数として渡すオブジェクト */
 	var args = {};
 
 	/* type String - Can be "none", "info" or "warning" */
@@ -37,7 +33,6 @@ function show_dialog() {
 
 	console.log(args);
 
-	var btn_index = dialog.showMessageBox(curwin, args);
+	var btn_index = dialog.showMessageBox(args);
 	alert('「' + dlg_button[btn_index] + '」が押されました。');
 }
-
